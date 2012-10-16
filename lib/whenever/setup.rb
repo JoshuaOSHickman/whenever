@@ -14,7 +14,7 @@ if Whenever.bundler?
   job_type :rake, "cd :path && RAILS_ENV=:environment bundle exec rake :task --silent :output"
   job_type :script, "cd :path && RAILS_ENV=:environment bundle exec script/:task :output"
 else
-  job_type :rake, "cd :path && RAILS_ENV=:environment rake :task --silent :output"
+  job_type :rake, "cd :path && RAILS_ENV=:environment rake -W0 :task --silent :output"
   job_type :script, "cd :path && RAILS_ENV=:environment script/:task :output"
 end
 
